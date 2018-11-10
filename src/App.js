@@ -1,25 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import PickBuildings from "./components/PickBuildings";
+import Dungeon from "./components/Dungeon";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showBuildings: false,
+      showDungeon: false
+    };
+    this.handlePickBuildings = this.handlePickBuildings.bind(this);
+    this.handleDungeon = this.handleDungeon.bind(this);
+  }
+  handlePickBuildings() {
+    this.setState(prevState => ({
+      showBuildings: !prevState.showBuildings
+    }));
+  }
+
+  handleDungeon() {
+    this.setState(prevState => ({
+      showDungeon: !prevState.showDungeon
+    }));
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <button onClick={this.handlePickBuildings}>Pick Buildings</button>
+        <button onClick={this.handleDungeon}>Dungeon</button>
+        <PickBuildings show={this.state.showBuildings} />
+        <Dungeon show={this.state.showDungeon} />
       </div>
     );
   }

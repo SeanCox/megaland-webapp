@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Rabbit",
+    "damage": 1,
+    "jump": "Jump",
+    "special": "Trade 3 carrots for 3 random cards"
+  },
+  {
+    "name": "Floating Eye",
+    "damage": 1,
+    "jump": "",
+    "special": ""
+  },
+  {
+    "name": "Clouds",
+    "damage": 0,
+    "jump": "",
+    "special": ""
+  },
+  {
+    "name": "Spires",
+    "damage": 0,
+    "jump": "",
+    "special": ""
+  },
+  {
+    "name": "Green Mesa",
+    "damage": 0,
+    "jump": "",
+    "special": ""
+  },
+  {
+    "name": "Serpent",
+    "damage": 3,
+    "jump": "Jump",
+    "special": ""
+  },
+  {
+    "name": "Bats",
+    "damage": 2,
+    "jump": "",
+    "special": ""
+  },
+  {
+    "name": "Paranha Plant",
+    "damage": 2,
+    "jump": "Jump",
+    "special": ""
+  },
+  {
+    "name": "Chest",
+    "damage": 0,
+    "jump": "",
+    "special": "Draw an extra card"
+  },
+  {
+    "name": "Sludge Monster",
+    "damage": 1,
+    "jump": "Jump",
+    "special": ""
+  }
+]
