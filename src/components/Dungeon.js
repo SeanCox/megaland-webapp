@@ -32,9 +32,7 @@ export default class Dungeon extends Component {
             damage: {this.state.selectedCard.damage}{" "}
             {this.state.selectedCard.jump}
           </div>
-          {!this.state.cards.length ? (
-            <button onClick={this.handleReset}>reset</button>
-          ) : null}
+          <button onClick={this.handleReset}>reset</button>
         </div>
       );
     }
