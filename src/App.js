@@ -7,6 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      gameState: "start",
       showBuildings: false,
       showDungeon: false
     };
@@ -15,24 +16,41 @@ class App extends Component {
   }
   handlePickBuildings() {
     this.setState(prevState => ({
-      showBuildings: !prevState.showBuildings
+      showBuildings: !prevState.showBuildings,
+      gameState: "buildings"
     }));
   }
 
   handleDungeon() {
     this.setState(prevState => ({
-      showDungeon: !prevState.showDungeon
+      showDungeon: !prevState.showDungeon,
+      gameState: "dungeon"
     }));
   }
   render() {
-    return (
-      <div className="App">
-        <button onClick={this.handlePickBuildings}>Pick Buildings</button>
-        <button onClick={this.handleDungeon}>Dungeon</button>
-        <PickBuildings show={this.state.showBuildings} />
-        <Dungeon show={this.state.showDungeon} />
-      </div>
-    );
+    if (this.state.gameState === "start") {
+      return (
+        <div className="App">
+          <button onClick={this.handlePickBuildings}>Start</button>
+        </div>
+      );
+    }
+    if (this.state.gameState === "buildings") {
+      return (
+        <div className="App">
+          <PickBuildings show={this.state.showBuildings} />
+          <button onClick={this.handleDungeon}>Dungeon</button>
+        </div>
+      );
+    }
+    if (this.state.gameState === "dungeon") {
+      return (
+        <div className="App">
+          <Dungeon show={this.state.showDungeon} />
+        </div>
+      );
+    }
+    return <div className="App">please refresh page</div>;
   }
 }
 

@@ -6,6 +6,7 @@ export default class Dungeon extends Component {
     super(props);
     this.state = { cards: cards, selectedCard: "" };
     this.handleFlipCard = this.handleFlipCard.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
   handleFlipCard() {
     if (this.state.cards.length) {
@@ -18,16 +19,22 @@ export default class Dungeon extends Component {
       });
     }
   }
+  handleReset() {
+    this.setState({ cards: cards, selectedCard: "" });
+  }
   render() {
     if (this.props.show) {
       return (
         <div>
+          <button onClick={this.handleFlipCard}>Flip Card</button>
           <div>{this.state.selectedCard.name}</div>
           <div>
             damage: {this.state.selectedCard.damage}{" "}
             {this.state.selectedCard.jump}
           </div>
-          <button onClick={this.handleFlipCard}>Flip Card</button>
+          {!this.state.cards.length ? (
+            <button onClick={this.handleReset}>reset</button>
+          ) : null}
         </div>
       );
     }
