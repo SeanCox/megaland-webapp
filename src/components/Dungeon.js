@@ -32,6 +32,7 @@ export default class Dungeon extends Component {
             damage: {this.state.selectedCard.damage}{" "}
             {this.state.selectedCard.jump}
           </div>
+          <div>Special: {this.state.selectedCard.special}</div>
           <button onClick={this.handleReset}>reset</button>
         </div>
       );
